@@ -1,11 +1,13 @@
 from weapon import Weapon
 
-class Robot:
-    def __init__(self, name, health_giving, weapon):
+class Robot():
+    def __init__(self, name):
         self.name = name
-        self.health = health_giving
-        self.weapon = weapon
-        # self.attack(self,dinosaur) = void
+        self.weapon = Weapon
+        self.health = 100
+
+    def attack(self, dinosaur):
+        pass
 
 
     #blue print for each robot delete later/

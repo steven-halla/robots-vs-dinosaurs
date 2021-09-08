@@ -1,17 +1,12 @@
 class Weapon:
-    def __init__(self, name, attack_power):
-        self.name = str
-        self.attack_power = int
-
-    def claw(self):
-        self.name = "claw"
+    def __init__(self):
+        self.name = "auto cannon"
         self.attack_power = 5
 
-    def auto_cannons(self):
-        self.name = "auto cannons"
-        self.attack_power = 15
+    # I was told to make only 1 weapon, so why does
+    # wire frame have us pass in name and attack power params?
+    # def auto_cannon(self):
+    #     self.name = "auto cannon"
+    #     self.attack_power = 5
 
-    def flame_thrower(self):
-        self.name = "flame thrower"
-        self.attack_power = 10
 
