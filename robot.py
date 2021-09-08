@@ -1,28 +1,13 @@
-from weapon import Weapon
+from weapon import Weapon, Auto_Cannons
 
-class Robot():
+class Robot:
     def __init__(self, name):
         self.name = name
-        self.weapon = Weapon
+        self.weapon = Auto_Cannons()
         self.health = 100
 
     def attack(self, dinosaur):
-        pass
+        self.weapon.attack(dinosaur)
 
 
-    #blue print for each robot delete later/
-    # def deploy_ripper(self):
-    #     self.name = "ripper"
-    #     self.health = 10
-    #     self.weapon = "claw"
-    #
-    #
-    # def deploy_devastator(self):
-    #     self.name = "devastator"
-    #     self.health = 20
-    #     self.weapon = "auto cannons"
-    #
-    # def deploy_meltor(self):
-    #     self.name = "meltor"
-    #     self.health = 15
-    #     self.weapon = "flame thrower"
+
