@@ -1,10 +1,16 @@
-class Herd():
+from dinosaur import Dinosaur
+
+
+class Herd:
     def __init__(self):
-        pass
+        self.dinosaur_list = []
+        self.train_dinosaur()
 
-    def create_herd(self):
-        return
+    def train_dinosaur(self):
+        dinosaur1 = Dinosaur("trex", 30)
+        dinosaur2 = Dinosaur("raptor", 10)
+        dinosaur3 = Dinosaur("triceratops", 20)
 
-    def create_dino_list(self):
-        dinosaur_list = ["raptor", "triceratops", "zombie_t_rex"]
-        print(dinosaur_list)
+        self.dinosaur_list.append(dinosaur1)
+        self.dinosaur_list.append(dinosaur2)
+        self.dinosaur_list.append(dinosaur3)

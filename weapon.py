@@ -3,10 +3,10 @@ class Weapon:
         self.name = name
         self.attack_power = attack_power
 
-    def attack(self, enemy):
-        print("attack " + enemy.name + " with " + self.name + " for " + str(self.attack_power) + " damage")
-        enemy.health -= self.attack_power
-        print("enemy hp " + str(enemy.health))
+    def attack(self, dinosaur):
+        print("attack " + dinosaur.name + " with " + self.name + " for " + str(self.attack_power) + " damage")
+        dinosaur.health -= self.attack_power
+        print("enemy hp " + str(dinosaur.health))
 
 
 class Auto_Cannons(Weapon):

@@ -5,7 +5,10 @@ class Dinosaur:
         self.attack_power = attack_power
 
     def attack(self, robot):
-        return
+        self.attack(robot)
+        print("attack " + robot.name + " with " + self.name + " for " + str(self.attack_power) + " damage")
+        robot.health -= self.attack_power
+        print("robot hp " + str(robot.health))
 
 
 # class Velociraptor(Dinosaur):
