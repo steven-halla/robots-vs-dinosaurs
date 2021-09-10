@@ -6,10 +6,10 @@ class Weapon:
     def attack(self, dinosaur):
         print("attack " + dinosaur.name + " with " + self.name + " for " + str(self.attack_power) + " damage")
         dinosaur.health -= self.attack_power
-        print("enemy hp " + str(dinosaur.health))
+        print("dinosaur hp " + str(dinosaur.health))
 
 
-class Auto_Cannons(Weapon):
+class AutoCannons(Weapon):
     def __init__(self):
         Weapon.__init__(self, "auto cannons", 10)
 
@@ -19,7 +19,7 @@ class Auto_Cannons(Weapon):
         Weapon.attack(self, enemy)
 
 
-# class Flame_thrower(Weapon):
+# class Flamethrower(Weapon):
 #     def __init__(self):
 #         Weapon.__init__(self, "flame thrower", 10)
 #

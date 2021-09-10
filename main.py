@@ -2,15 +2,9 @@ import dinosaur
 import robot
 from dinosaur import Dinosaur
 from robot import Robot
-from battlefield import start_game
+from battlefield import BattleField
 
-class game_start():
-    def __init__(self):
-        start_game()
-
-game_start()
-my_battle = start_game()
-
+my_battle = BattleField()
 my_battle.welcome_message()
 my_battle.battle()
 

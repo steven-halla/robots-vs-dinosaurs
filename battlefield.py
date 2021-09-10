@@ -5,7 +5,7 @@ from herd import Herd
 from robot import Robot
 
 
-class start_game():
+class BattleField:
     def __init__(self):
 
         self.herd = Herd()
@@ -14,27 +14,55 @@ class start_game():
     def welcome_message(self):
         print("Hi welcome to the game")
 
-    def battle(self):
+    def battle_first_robot_and_dinosaur(self):
         while self.fleet.robot_list[0].health > 0 and self.herd.dinosaur_list[0].health > 0:
             self.fleet.robot_list[0].attack(self.herd.dinosaur_list[0])
             print("robot attack over")
+            self.herd.dinosaur_list[0].attack(self.fleet.robot_list[0])
+            print("dinosaur attack over")
             if self.herd.dinosaur_list[0].health <= 0:
                 print("robot wins the match")
                 self.battle_over()
 
-            else:
+            elif self.fleet.robot_list[0].health <= 0:
                 print("dinosaur wins the match")
                 self.battle_over()
+            else:
+                print("battle on going")
 
+    def battle(self):
+        while len(self.fleet.robot_list) > 0 and len(self.herd.dinosaur_list) > 0:
+            self.fleet.robot_list[0].attack(self.herd.dinosaur_list[0])
+            print("robot attack over")
             self.herd.dinosaur_list[0].attack(self.fleet.robot_list[0])
             print("dinosaur attack over")
-            if self.fleet.robot_list[0].health <= 0:
+            if self.herd.dinosaur_list[0].health <= 0:
+                print("robot wins the match")
+                del self.herd.dinosaur_list[0]
+            elif self.fleet.robot_list[0].health <= 0:
+                print(len(self.fleet.robot_list))
                 print("dinosaur wins the match")
-                self.battle_over()
+                del self.fleet.robot_list[0]
+
+
 
             else:
-                print("robot  winss the match")
-                self.battle_over()
+                print("battle on going")
+
+        # while self.fleet.robot_list[0].health > 0 and self.herd.dinosaur_list[0].health > 0:
+        #     self.fleet.robot_list[0].attack(self.herd.dinosaur_list[0])
+        #     print("robot attack over")
+        #     self.herd.dinosaur_list[0].attack(self.fleet.robot_list[0])
+        #     print("dinosaur attack over")
+        #     if self.herd.dinosaur_list[0].health <= 0:
+        #         print("robot wins the match")
+        #         self.battle_over()
+        #
+        #     elif self.fleet.robot_list[0].health <= 0:
+        #         print("dinosaur wins the match")
+        #         self.battle_over()
+        #     else:
+        #         print("battle on going")
 
 
     def battle_over(self):
